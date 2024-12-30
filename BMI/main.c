@@ -12,6 +12,11 @@ typedef struct {
     int weightInKilos;
 } Person;
 
+float bodyMassIndex(Person p)
+{
+    return p.weightInKilos / (p.heightInMeters * p.heightInMeters);
+}
+
 int main(int argc, const char * argv[]) {
     Person edwin;
     edwin.heightInMeters = 1.8;
@@ -21,10 +26,12 @@ int main(int argc, const char * argv[]) {
     aaron.heightInMeters = 1.97;
     aaron.weightInKilos = 84;
     
-    printf("edwin is %.2f meters tall\n", edwin.heightInMeters);
-    printf("edwin weighs %d kilograms\n", edwin.weightInKilos);
-    printf("aaron is %.2f meters tall\n", aaron.heightInMeters);
-    printf("aaron weighs %d kilograms\n", aaron.weightInKilos);
+    float bmi;
+    bmi = bodyMassIndex(edwin);
+    printf("edwin has a BMI of %.2f\n", bmi);
+    
+    bmi = bodyMassIndex(aaron);
+    printf("aaron has a BMI of %.2f\n", bmi);
     
     return 0;
 }
