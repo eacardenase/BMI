@@ -7,17 +7,17 @@
 
 #include <stdio.h>
 
-struct Person {
+typedef struct {
     float heightInMeters;
     int weightInKilos;
-};
+} Person;
 
 int main(int argc, const char * argv[]) {
-    struct Person edwin;
+    Person edwin;
     edwin.heightInMeters = 1.8;
     edwin.weightInKilos = 96;
     
-    struct Person aaron;
+    Person aaron;
     aaron.heightInMeters = 1.97;
     aaron.weightInKilos = 84;
     
